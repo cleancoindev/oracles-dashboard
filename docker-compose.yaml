@@ -1,0 +1,44 @@
+version: '2.2'
+services:
+  mongo:
+    image: mongo:rc-xenial
+    restart: always
+    ports:
+      - 27017:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo  
+  mongo-proxy:
+    build:
+      context: .
+      dockerfile: ProxyDockerfile
+    restart: always
+    depends_on:
+      - mongo  
+  graphana:
+    build:
+      context: .
+      dockerfile: GrafanaDockerfile    
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo-proxy    
+  listener:
+    build: listener
+    restart: always
+    command: python3 main.py
+    volumes:
+      - ./listener/src/:/project
+    environment:
+     - PYTHONUNBUFFERED=1
+    env_file:
+      - config.env
+      - .env
+    depends_on:
+      - mongo
+

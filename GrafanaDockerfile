@@ -1,0 +1,13 @@
+FROM grafana/grafana
+
+COPY . /var/lib/grafana/plugins/mongodb-grafana
+COPY ./examples/docker-demo/datasources /etc/grafana/provisioning/datasources
+COPY ./examples/docker-demo/dashboards /etc/grafana/provisioning/dashboards
+COPY . /var/lib/grafana/plugins/mongodb-grafana
+COPY ./examples /var/lib/grafana/dashboards
+
+ENV GF_AUTH_DISABLE_LOGIN_FORM "true"
+ENV GF_AUTH_ANONYMOUS_ENABLED "true"
+ENV GF_AUTH_ANONYMOUS_ORG_ROLE "Admin"
+
+EXPOSE 3000

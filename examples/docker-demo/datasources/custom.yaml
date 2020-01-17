@@ -1,0 +1,12 @@
+apiVersion: 1
+
+datasources:
+- name: RCN_MONGO
+  type: grafana-mongodb-datasource
+  access: proxy
+  is_default: true 
+  url: http://mongo-proxy:3333
+  jsonData:
+    mongodb_db: rcn
+    mongodb_url: mongodb://mongo:27017
+  editable: true

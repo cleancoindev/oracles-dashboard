@@ -1,0 +1,36 @@
+version: '2.2'
+services:
+  mongo:
+    image: mongo:rc-xenial
+    restart: always
+    ports:
+      - 27017:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo  
+  mongo-proxy:
+    image: menendeznm/mongo-proxy:v1
+    restart: always
+    depends_on:
+      - mongo  
+  graphana:
+    image: menendeznm/mongo-grafana:v4
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo-proxy    
+  listener:
+    image: menendeznm/listener-oracle:v6
+    restart: always
+    environment:
+     - PYTHONUNBUFFERED=1
+    env_file:
+      - config.env
+      - .env
+    depends_on:
+      - mongo
