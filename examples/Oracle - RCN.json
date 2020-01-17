@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1579266553129,
+  "iteration": 1579277933031,
   "links": [],
   "panels": [
     {
@@ -25,12 +25,13 @@
       "colorPrefix": false,
       "colorValue": false,
       "colors": [
-        "#299c46",
+        "#1F60C4",
         "#E02F44",
         "#E02F44"
       ],
       "datasource": "RCN_MONGO",
-      "format": "currencyBTC",
+      "decimals": 6,
+      "format": "currencyUSD",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -97,14 +98,8 @@
       "transparent": true,
       "type": "singlestat",
       "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
+      "valueMaps": [],
+      "valueName": "current"
     },
     {
       "cacheTimeout": null,
@@ -118,7 +113,8 @@
         "#d44a3a"
       ],
       "datasource": "RCN_MONGO",
-      "format": "currencyBTC",
+      "decimals": 6,
+      "format": "currencyUSD",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -192,7 +188,7 @@
           "value": "null"
         }
       ],
-      "valueName": "avg"
+      "valueName": "current"
     },
     {
       "columns": [],
@@ -541,6 +537,7 @@
         "x": 0,
         "y": 17
       },
+      "hiddenSeries": false,
       "id": 1,
       "legend": {
         "avg": false,
@@ -642,7 +639,7 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 19,
+  "schemaVersion": 21,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -650,7 +647,6 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
           "text": "USD",
           "value": "USD"
         },
