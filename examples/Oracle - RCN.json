@@ -15,98 +15,9 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1568299932818,
+  "iteration": 1579266553129,
   "links": [],
   "panels": [
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorPostfix": false,
-      "colorPrefix": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#3274D9",
-        "#d44a3a"
-      ],
-      "datasource": "RCN_MONGO",
-      "format": "currencyBTC",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 5,
-        "x": 0,
-        "y": 0
-      },
-      "id": 7,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "ETH ",
-      "prefixFontSize": "80%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "#5794F2",
-        "full": false,
-        "lineColor": "#3274D9",
-        "show": false,
-        "ymax": null,
-        "ymin": null
-      },
-      "tableColumn": "ETH",
-      "targets": [
-        {
-          "rawQuery": true,
-          "refId": "A",
-          "target": "db.oracle_rate.aggregate ( [{ \"$match\" :    {   \"symbol\" : \"ETH\" }  },{\"$sort\" : {\"time_bson\" : 1}}, {\"$group\" : {\"_id\" : \"$oracle\", \"lastRate\" : { \"$last\": \"$median_rate\" }}}, {\"$project\" :  { \"ETH\" : \"$lastRate\"} }])",
-          "type": "table"
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "ETH Median",
-      "transparent": true,
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
-    },
     {
       "cacheTimeout": null,
       "colorBackground": true,
@@ -130,10 +41,10 @@
       "gridPos": {
         "h": 3,
         "w": 5,
-        "x": 5,
+        "x": 0,
         "y": 0
       },
-      "id": 8,
+      "id": 11,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -153,7 +64,7 @@
       "options": {},
       "postfix": "",
       "postfixFontSize": "50%",
-      "prefix": "BTC",
+      "prefix": "ARS",
       "prefixFontSize": "80%",
       "rangeMaps": [
         {
@@ -170,19 +81,107 @@
         "ymax": null,
         "ymin": null
       },
-      "tableColumn": "BTC",
+      "tableColumn": "ARS",
       "targets": [
         {
           "rawQuery": true,
           "refId": "A",
-          "target": "db.oracle_rate.aggregate ( [{ \"$match\" :    {   \"symbol\" : \"BTC\" }  },{\"$sort\" : {\"time_bson\" : 1}}, {\"$group\" : {\"_id\" : \"$oracle\", \"lastRate\" : { \"$last\": \"$median_rate\" }}}, {\"$project\" :  { \"BTC\" : \"$lastRate\"} }])",
+          "target": "db.oracle_rate.aggregate ( [{ \"$match\" :    {   \"symbol\" : \"ARS\" }  },{\"$sort\" : {\"time_bson\" : 1}}, {\"$group\" : {\"_id\" : \"$oracle\", \"lastRate\" : { \"$last\": \"$median_rate\" }}}, {\"$project\" :  { \"ARS\" : \"$lastRate\"} }])",
           "type": "table"
         }
       ],
       "thresholds": "",
       "timeFrom": null,
       "timeShift": null,
-      "title": "BTC Median",
+      "title": "ARS Median",
+      "transparent": true,
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorPostfix": false,
+      "colorPrefix": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "#3274D9",
+        "#d44a3a"
+      ],
+      "datasource": "RCN_MONGO",
+      "format": "currencyBTC",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 5,
+        "y": 0
+      },
+      "id": 12,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "USD",
+      "prefixFontSize": "80%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "#5794F2",
+        "full": false,
+        "lineColor": "#3274D9",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "USD",
+      "targets": [
+        {
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.oracle_rate.aggregate ( [{ \"$match\" :    {   \"symbol\" : \"USD\" }  },{\"$sort\" : {\"time_bson\" : 1}}, {\"$group\" : {\"_id\" : \"$oracle\", \"lastRate\" : { \"$last\": \"$median_rate\" }}}, {\"$project\" :  { \"USD\" : \"$lastRate\"} }])",
+          "type": "table"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "USD Median",
       "transparent": true,
       "type": "singlestat",
       "valueFontSize": "80%",
@@ -303,366 +302,14 @@
       "type": "table"
     },
     {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorPostfix": false,
-      "colorPrefix": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#E02F44",
-        "#E02F44"
-      ],
-      "datasource": "RCN_MONGO",
-      "format": "currencyBTC",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 5,
-        "x": 0,
-        "y": 3
-      },
-      "id": 11,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "ARS",
-      "prefixFontSize": "80%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "#5794F2",
-        "full": false,
-        "lineColor": "#3274D9",
-        "show": false,
-        "ymax": null,
-        "ymin": null
-      },
-      "tableColumn": "ARS",
-      "targets": [
-        {
-          "rawQuery": true,
-          "refId": "A",
-          "target": "db.oracle_rate.aggregate ( [{ \"$match\" :    {   \"symbol\" : \"ARS\" }  },{\"$sort\" : {\"time_bson\" : 1}}, {\"$group\" : {\"_id\" : \"$oracle\", \"lastRate\" : { \"$last\": \"$median_rate\" }}}, {\"$project\" :  { \"ARS\" : \"$lastRate\"} }])",
-          "type": "table"
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "ARS Median",
-      "transparent": true,
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorPostfix": false,
-      "colorPrefix": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#3274D9",
-        "#d44a3a"
-      ],
-      "datasource": "RCN_MONGO",
-      "format": "currencyBTC",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 5,
-        "x": 5,
-        "y": 3
-      },
-      "id": 12,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "USD",
-      "prefixFontSize": "80%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "#5794F2",
-        "full": false,
-        "lineColor": "#3274D9",
-        "show": false,
-        "ymax": null,
-        "ymin": null
-      },
-      "tableColumn": "USD",
-      "targets": [
-        {
-          "rawQuery": true,
-          "refId": "A",
-          "target": "db.oracle_rate.aggregate ( [{ \"$match\" :    {   \"symbol\" : \"USD\" }  },{\"$sort\" : {\"time_bson\" : 1}}, {\"$group\" : {\"_id\" : \"$oracle\", \"lastRate\" : { \"$last\": \"$median_rate\" }}}, {\"$project\" :  { \"USD\" : \"$lastRate\"} }])",
-          "type": "table"
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "USD Median",
-      "transparent": true,
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorPostfix": false,
-      "colorPrefix": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#3274D9",
-        "#d44a3a"
-      ],
-      "datasource": "RCN_MONGO",
-      "format": "currencyBTC",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 5,
-        "x": 0,
-        "y": 6
-      },
-      "id": 14,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "MANA",
-      "prefixFontSize": "80%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "#5794F2",
-        "full": false,
-        "lineColor": "#3274D9",
-        "show": false,
-        "ymax": null,
-        "ymin": null
-      },
-      "tableColumn": "MANA",
-      "targets": [
-        {
-          "rawQuery": true,
-          "refId": "B",
-          "target": "db.oracle_rate.aggregate ( [{ \"$match\" :    {   \"symbol\" : \"MANA\" }  },{\"$sort\" : {\"time_bson\" : 1}}, {\"$group\" : {\"_id\" : \"$oracle\", \"lastRate\" : { \"$last\": \"$median_rate\" }}}, {\"$project\" :  { \"MANA\" : \"$lastRate\"} }])",
-          "type": "table"
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "DAI Median",
-      "transparent": true,
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorPostfix": false,
-      "colorPrefix": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#E02F44",
-        "#FFCB7D"
-      ],
-      "datasource": "RCN_MONGO",
-      "format": "currencyBTC",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 5,
-        "x": 5,
-        "y": 6
-      },
-      "id": 13,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "DAI",
-      "prefixFontSize": "80%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "#5794F2",
-        "full": false,
-        "lineColor": "#3274D9",
-        "show": false,
-        "ymax": null,
-        "ymin": null
-      },
-      "tableColumn": "DAI",
-      "targets": [
-        {
-          "rawQuery": true,
-          "refId": "B",
-          "target": "db.oracle_rate.aggregate ( [{ \"$match\" :    {   \"symbol\" : \"DAI\" }  },{\"$sort\" : {\"time_bson\" : 1}}, {\"$group\" : {\"_id\" : \"$oracle\", \"lastRate\" : { \"$last\": \"$median_rate\" }}}, {\"$project\" :  { \"DAI\" : \"$lastRate\"} }])",
-          "type": "table"
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "DAI Median",
-      "transparent": true,
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "avg"
-    },
-    {
       "columns": [],
       "datasource": "RCN_MONGO",
       "fontSize": "100%",
       "gridPos": {
-        "h": 8,
+        "h": 14,
         "w": 10,
         "x": 0,
-        "y": 9
+        "y": 3
       },
       "id": 3,
       "options": {},
@@ -886,7 +533,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "RCN_MONGO",
-      "fill": 1,
+      "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 13,
@@ -915,7 +562,13 @@
       "pointradius": 1,
       "points": true,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "alias": "Median",
+          "linewidth": 2,
+          "points": false
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": true,
@@ -923,6 +576,7 @@
         {
           "groupByAliases": [],
           "groupByColumns": [],
+          "hide": false,
           "metricAggs": [
             {
               "column": "value",
@@ -932,7 +586,7 @@
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
-          "target": "db.oracle_rate.aggregate ( [ \n{ \"$match\" :    {   \"symbol\" : \"$currency\",  \"signer_name\" : \"$provider_name\",  \"time_bson\" : { \"$gte\" : \"$from\", \"$lte\" : \"$to\" }  }  },   \n {\"$sort\" : {\"time_bson\" : 1}},   \n {\"$project\" :   {  \"name\" : \"$signer_name\",   \"value\" : \"$rate\",  \"ts\" : \"$time_bson\",  \"_id\" : 0} } ])",
+          "target": "db.oracle_rate.aggregate ( [ \n{ \"$match\" :    {   \"symbol\" : \"$currency\",  \"time_bson\" : { \"$gte\" : \"$from\", \"$lte\" : \"$to\" }  }  },   \n {\"$sort\" : {\"time_bson\" : 1}},   \n {\"$project\" :   {  \"name\" : \"$signer_name\",   \"value\" : \"$rate\",  \"ts\" : \"$time_bson\",  \"_id\" : 0} } ])",
           "timeInterval": "auto_gf",
           "type": "timeserie",
           "whereClauses": []
@@ -951,7 +605,7 @@
       "title": "Oracle Rate",
       "tooltip": {
         "mode": "single",
-        "shared": false,
+        "shared": true,
         "sort": 0,
         "value_type": "individual"
       },
@@ -965,7 +619,7 @@
       },
       "yaxes": [
         {
-          "format": "none",
+          "format": "currencyUSD",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -996,8 +650,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "ARS",
-          "value": "ARS"
+          "selected": false,
+          "text": "USD",
+          "value": "USD"
         },
         "datasource": "RCN_MONGO",
         "definition": "db.oracle_rate.aggregate ( [  { \"$group\" :  { \"_id\" : \"$symbol\"  } } ]  ) ",
@@ -1022,7 +677,9 @@
         "allValue": null,
         "current": {
           "text": "All",
-          "value": "$__all"
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "RCN_MONGO",
         "definition": "db.oracle_rate.aggregate ( [  { \"$group\" :  { \"_id\" : \"$signer_name\"  } } ]  ) ",
@@ -1077,5 +734,5 @@
   "timezone": "",
   "title": "RCN ORACLE DASHBOARD - 4",
   "uid": "vEzG34cZk",
-  "version": 5
+  "version": 1
 }
