@@ -19,4 +19,4 @@ def to_bool(hex_string):
 
 
 def add_0x_prefix(string):
-    return web3._utils.contracts.add_0x_prefix(string)
+    return web3.utils.contracts.add_0x_prefix(string)

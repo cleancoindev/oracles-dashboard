@@ -187,6 +187,9 @@ class Provide(CommitProcessor):
         get_symbol = oracle_factory_interface.get_symbol(oracleRate.oracle)
         rate_decimals = int(oracleRate.raw_rate) / (10 ** 18) / (10 ** decimals)
 
+        signer_balance = eth_conn.w3.eth.getBalance(oracleRate.signer)
+        signer_balance_eth = int(signer_balance) / (10 ** 18) 
+
         # Webhook all provides
         self.all_provides_webhook(oracleRate, get_symbol, signer_name, rate_decimals, median_rate_decimals, commit)
 
@@ -205,7 +208,8 @@ class Provide(CommitProcessor):
         oracleRate.symbol = get_symbol
         oracleRate.timestamp = str(commit.timestamp)
         oracleRate.time_bson = datetime.fromtimestamp(commit.timestamp)
-    
+        oracleRate.signer_balance = str("{:.10f}".format(signer_balance_eth))
+        
         commit.save()
         oracleRate.save()
 
