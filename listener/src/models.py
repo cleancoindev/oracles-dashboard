@@ -54,6 +54,7 @@ class OracleRate(Document):
     symbol = StringField(required=True, max_length=150)
     timestamp = StringField(required=True, max_length=150)
     time_bson = DateTimeField(required=True)
+    signer_balance = StringField(required=True, max_length=150)
 
 class ProvideRate(Document):
     oracle = StringField(required=True, max_length=150)
